@@ -1,10 +1,10 @@
 export default {
   name: "default",
   colors: {
-    primary: "",
-    secundary: "",
-    background: "",
-    foreground: "#FFF",
+    primary: "#3F2839",
+    secondary: "#8BE8CB",
+    background: "#FFF",
+    text: "#333333",
   },
   font: {
     size: 14,

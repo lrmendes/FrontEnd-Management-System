@@ -1,9 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Users() {
-  useEffect(() => {
-    // effectCarregarUsuarios
-  }, []);
-
-  return <div></div>;
+  return <div>Users</div>;
 }

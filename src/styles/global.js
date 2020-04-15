@@ -12,6 +12,7 @@ export default createGlobalStyle`
   :root {
     font-size:  ${({ theme }) => theme.font.size + "px"};
     font-family: ${({ theme }) => theme.font.family};
+    color: ${({ theme }) => theme.colors.text}
   }
 
   html,
