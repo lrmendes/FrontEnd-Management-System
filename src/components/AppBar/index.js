@@ -16,17 +16,18 @@ import AccountIcon from "@material-ui/icons/AccountCircle";
 const StyledBar = styled(Bar)`
   display: flex;
   background-color: #fff;
-  color: #333;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const SearchInput = styled.div`
   display: flex;
   flex: 1;
-  background-color: ${fade("#333", 0.15)};
+  background-color: ${({ theme }) => fade(theme.colors.text, 0.1)};
   margin: 0 3rem;
   border-radius: ${({ theme }) => theme.roundness}px;
   align-items: center;
   transition: 300ms ease-in all;
+  color: ${({ theme }) => theme.colors.text};
 
   @media (max-width: 900px) {
     margin: 0 1rem;
@@ -35,8 +36,10 @@ const SearchInput = styled.div`
 
 const Logo = styled(Typography)`
   font-family: inherit;
-  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
   margin: 0 1rem;
+  color: ${({ theme }) => theme.colors.text};
   @media (max-width: 750px) {
     display: none;
   }
@@ -52,8 +55,7 @@ const Icon = styled.div`
 const Input = styled(InputBase)`
   font-family: inherit;
   width: 100%;
-  /* color: #fff; */
-  color: #333;
+  color: inherit;
 `;
 
 const Container = styled(Toolbar)`
