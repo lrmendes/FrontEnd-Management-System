@@ -16,7 +16,7 @@ import LayersIcon from "@material-ui/icons/Layers";
 import DoneIcon from "@material-ui/icons/Done";
 import GroupIcon from "@material-ui/icons/Group";
 import LockIcon from "@material-ui/icons/Lock";
-// import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   drawerPaper: {
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SideBar({ isOpen }) {
   const classes = useStyles();
+  const { location, ...history } = useHistory();
 
   return (
     <Drawer
@@ -36,28 +37,44 @@ export default function SideBar({ isOpen }) {
       elevation={0}
     >
       <List>
-        <ListItem button onClick={() => console.log("/")}>
+        <ListItem
+          selected={location.pathname === "/"}
+          button
+          onClick={() => history.push("/")}
+        >
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText primary={"Dashboard"} />
         </ListItem>
         <ListSubheader component="div">Gerenciamento</ListSubheader>
-        <ListItem button onClick={() => console.log("/stock")}>
+        <ListItem
+          selected={location.pathname === "/storage"}
+          button
+          onClick={() => history.push("/storage")}
+        >
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
           <ListItemText primary={"Estoque"} />
         </ListItem>
 
-        <ListItem button onClick={() => console.log("/stock")}>
+        <ListItem
+          button
+          selected={location.pathname === "/products"}
+          onClick={() => history.push("/products")}
+        >
           <ListItemIcon>
             <TagIcon />
           </ListItemIcon>
           <ListItemText primary={"Produtos"} />
         </ListItem>
 
-        <ListItem button onClick={() => console.log("/stock")}>
+        <ListItem
+          button
+          selected={location.pathname === "/wine"}
+          onClick={() => history.push("/wine")}
+        >
           <ListItemIcon>
             <WineIcon />
           </ListItemIcon>
@@ -65,13 +82,22 @@ export default function SideBar({ isOpen }) {
         </ListItem>
 
         <ListSubheader component="div">Produção</ListSubheader>
-        <ListItem button onClick={() => console.log("/stock")}>
+        <ListItem
+          button
+          selected={location.pathname === "/stage"}
+          onClick={() => history.push("/stage")}
+        >
           <ListItemIcon>
             <LayersIcon />
           </ListItemIcon>
           <ListItemText primary={"Etapas"} />
         </ListItem>
-        <ListItem button onClick={() => console.log("/stock")}>
+
+        <ListItem
+          button
+          selected={location.pathname === "/tasks"}
+          onClick={() => history.push("/tasks")}
+        >
           <ListItemIcon>
             <DoneIcon />
           </ListItemIcon>
@@ -79,13 +105,23 @@ export default function SideBar({ isOpen }) {
         </ListItem>
 
         <ListSubheader component="div">Administração</ListSubheader>
-        <ListItem button onClick={() => console.log("/stock")}>
+
+        <ListItem
+          button
+          selected={location.pathname === "/users"}
+          onClick={() => history.push("/users")}
+        >
           <ListItemIcon>
             <GroupIcon />
           </ListItemIcon>
           <ListItemText primary={"Usuários"} />
         </ListItem>
-        <ListItem button onClick={() => console.log("/stock")}>
+
+        <ListItem
+          button
+          selected={location.pathname === "/permissions"}
+          onClick={() => history.push("/permissions")}
+        >
           <ListItemIcon>
             <LockIcon />
           </ListItemIcon>
