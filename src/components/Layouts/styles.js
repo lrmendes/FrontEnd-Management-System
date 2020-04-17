@@ -5,7 +5,7 @@ const Section = styled.div`
   display: grid;
   grid-template-rows: 50px 1fr;
   margin: 2rem;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 const LimitedSection = styled.div`
@@ -13,6 +13,12 @@ const LimitedSection = styled.div`
   gap: 1rem;
   max-width: 900px;
   justify-self: center;
+`;
+
+const GridSection = styled(LimitedSection)`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
 `;
 
 const ScrollSection = styled.div`
@@ -27,7 +33,7 @@ const SectionHeader = styled.div`
   grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: center;
-  justify-items: center;
+  justify-items: ${({ justify }) => justify || "center"};
 `;
 
 const HeaderTitle = styled(Typography)`
@@ -45,6 +51,7 @@ const BoldText = styled(Typography)`
 export {
   Section,
   LimitedSection,
+  GridSection,
   ScrollSection,
   SectionHeader,
   HeaderTitle,

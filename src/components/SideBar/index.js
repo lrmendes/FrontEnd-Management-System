@@ -84,8 +84,8 @@ export default function SideBar({ isOpen }) {
         <ListSubheader component="div">Produção</ListSubheader>
         <ListItem
           button
-          selected={location.pathname === "/stage"}
-          onClick={() => history.push("/stage")}
+          selected={location.pathname === "/stages"}
+          onClick={() => history.push("/stages")}
         >
           <ListItemIcon>
             <LayersIcon />
