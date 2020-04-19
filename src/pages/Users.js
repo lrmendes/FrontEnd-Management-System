@@ -59,17 +59,18 @@ export default function Users() {
     { key: 'username', name: 'Username' },
     { key: 'phone', name: 'Phone' },
     { key: 'email', name: 'Email' },
+    { key: 'nif', name: 'NIF'},
     { key: 'birthday', name: 'Birthday' },
     { key: 'address', name: 'Address' },
     { key: 'actions', name: 'Actions', width: 80 },
   ].map(c => ({ ...c, ...defaultColumnProperties }));
   
   const rows = [
-    {id: 0, name: 'Ros Main', role: 'Assistant', username: 'paiaco', phone: '351912030399', email: 'ros@gmail.com', birthday: '20/04/1991', address: 'Rua Ernani Batista, 925', actions: ''},
-    {id: 1, name: 'Calvin Malk', role: 'Engineer', username: 'paiaco', phone: '2141212412', email: 'ros@gmail.com', birthday: '20/04/1991', address: 'Rua Ernani Batista, 925', actions: ''},
-    {id: 2, name: 'Wester Park', role: 'Developer', username: 'paiaco', phone: '64564644589', email: 'ros@gmail.com', birthday: '20/04/1991', address: 'Rua Ernani Batista, 925', actions: ''},
-    {id: 3, name: 'Filer Ispor', role: 'Cloud Expert', username: 'paiaco', phone: '2654869345', email: 'ros@gmail.com', birthday: '20/04/1991', address: 'Rua Ernani Batista, 925', actions: ''},
-    {id: 4, name: 'Catrine Bors', role: 'Lead Design', username: 'paiaco', phone: '0988776970', email: 'ros@gmail.com', birthday: '12/04/1991', address: 'Rua Ernani Batista, 925', actions: ''},
+    {id: 0, name: 'Ros Main', role: 'Assistant', nif: '989798547', username: 'romain', phone: '351915029754', email: 'rosman@gmail.com', birthday: '20/04/1991', address: 'Rua Ernani, 925', actions: ''},
+    {id: 1, name: 'Calvin Malk', role: 'Engineer', nif: '501234579', username: 'calmalk', phone: '351916472954', email: 'calmalk@gmail.com', birthday: '10/01/1985', address: 'Avenida Palace, 15', actions: ''},
+    {id: 2, name: 'Wester Park', role: 'Developer', nif: '874230146', username: 'wespa', phone: '351912870305', email: 'parkwest@mail.com', birthday: '12/09/1998', address: 'Rua Vira, 291', actions: ''},
+    {id: 3, name: 'Filer Ispor', role: 'Cloud Expert', nif: '987410265', username: 'fipor', phone: '351918874002', email: 'ispor@live.com', birthday: '04/12/1990', address: 'Rua Pedro Alves, 12', actions: ''},
+    {id: 4, name: 'Catrine Bors', role: 'Lead Design', nif: '359874126', username: 'cabors', phone: '351916430255', email: 'bors@company.com', birthday: '14/08/1984', address: 'Avenida Carneiro, 55', actions: ''},
   ];
 
   const roleList = [
@@ -174,7 +175,7 @@ export default function Users() {
                 label="NIF"
                 fullWidth
                 type="number"
-                defaultValue={dialogContent ? dialogContent.name : ''}
+                defaultValue={dialogContent ? dialogContent.nif : ''}
               /></Box>
           </Grid>
           <Grid item xs={6}>
